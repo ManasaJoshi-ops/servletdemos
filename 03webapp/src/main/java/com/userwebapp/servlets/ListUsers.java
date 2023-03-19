@@ -8,22 +8,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/ListUsers")
+//@WebServlet("/ListUsers")
 public class ListUsers extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private Connection connection;
     private Statement statement =null;
-    public void init() {
+    public void init(ServletConfig config) {
     	try {
     		Class.forName("com.mysql.cj.jdbc.Driver");
-			connection =DriverManager.getConnection("jdbc:mysql://localhost/my_db", "root","MYPASS");
+			String dburl = config.getInitParameter("dburl");
+			String dbuser = config.getInitParameter("dbuser");
+			String dbpassword = config.getInitParameter("dbpassword");
+			connection =DriverManager.getConnection(dburl, dbuser,dbpassword);
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
