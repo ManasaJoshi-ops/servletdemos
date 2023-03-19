@@ -38,12 +38,14 @@ private Connection connection;
 				 Statement statement=connection.createStatement();) {
 			int result=statement.executeUpdate("Delete from  user where email = '" +emailId+"'" );
 			    PrintWriter out=response.getWriter();
+			    response.setContentType("text/html");
 				if(result>0) {
 					out.println("<h1>Deleted User</h1>");
 					
 				}else {
 					out.println("<h1>Error Deleting User</h1>");
 				}
+				out.print("<a href=\"index.html\">Home</a>");
 			
 			} catch (SQLException e) {
 				e.printStackTrace();

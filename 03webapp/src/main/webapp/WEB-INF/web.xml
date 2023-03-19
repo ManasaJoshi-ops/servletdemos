@@ -9,4 +9,23 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
+<!-- <servlet>
+<servlet-name>listuser</servlet-name>
+<servlet-class>package com.userwebapp.servlets.ListUsers</servlet-class>
+<init-param>
+<param-name>dburl</param-name>
+<param-value>jdbc:mysql://localhost/my_db</param-value>
+</init-param>
+
+<init-param>
+<param-name>dbuser</param-name>
+<param-value>root</param-value>
+</init-param>
+
+<init-param>
+<param-name>dbpassword</param-name>
+<param-value>MYPASS</param-value>
+</init-param>
+</servlet> -->
 </web-app>

@@ -37,12 +37,14 @@ public class UpdateUserServlet extends HttpServlet {
 				 Statement statement=connection.createStatement();) {
 			int result=statement.executeUpdate("update user set password= '" +password+"' where email = '" +emailId+"'" );
 			    PrintWriter out=response.getWriter();
+			    response.setContentType("text/html");
 				if(result>0) {
 					out.println("<h1>Password Updated</h1>");
 					
 				}else {
 					out.println("<h1>Error Updating user password</h1>");
 				}
+				out.print("<a href=\"index.html\">Home</a>");
 			
 			} catch (SQLException e) {
 				e.printStackTrace();

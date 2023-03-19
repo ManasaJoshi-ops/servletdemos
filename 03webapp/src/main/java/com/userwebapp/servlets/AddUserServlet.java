@@ -37,12 +37,14 @@ public class AddUserServlet extends HttpServlet {
 				 Statement statement=connection.createStatement();) {
 			int result=statement.executeUpdate("insert into user values('"+ firstname +"','"+lastname+"','"+emailId+"','"+password+"')");
 				PrintWriter out=response.getWriter();
+				response.setContentType("text/html");
 				if(result>0) {
 					out.println("<h1>User Created Successfully</h1>");
 					
 				}else {
 					out.println("<h1>Error Creating user</h1>");
 				}
+				out.print("<a href=\"index.html\">Home</a>");
 			
 			} catch (SQLException e) {
 				e.printStackTrace();
