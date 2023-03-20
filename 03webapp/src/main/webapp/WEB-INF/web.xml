@@ -13,7 +13,23 @@
 		<welcome-file>default.htm</welcome-file>
 	</welcome-file-list>
 
-	<servlet>
+
+
+<context-param>
+<param-name>dburl</param-name>
+<param-value>jdbc:mysql://localhost/my_db</param-value>
+</context-param>
+
+<context-param>
+<param-name>dbuser</param-name>
+<param-value>root</param-value>
+</context-param>
+
+<context-param>
+<param-name>dbpassword</param-name>
+<param-value>MYPASS</param-value>
+</context-param>
+	<!-- <servlet>
 		<servlet-name>ListUsers</servlet-name>
 		<servlet-class>com.userwebapp.servlets.ListUsers</servlet-class>
 		<init-param>
@@ -33,5 +49,5 @@
 		<servlet-name>ListUsers</servlet-name>
 		<url-pattern>/ListUsers</url-pattern>
 	</servlet-mapping>
-
+ -->
 </web-app>
