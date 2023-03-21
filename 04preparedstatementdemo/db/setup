@@ -1,0 +1,5 @@
+use my_db;
+
+create table product (id int, name varchar(20), desciption varchar(200), price int);
+
+select * from product;
